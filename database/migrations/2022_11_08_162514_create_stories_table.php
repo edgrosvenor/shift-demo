@@ -15,7 +15,7 @@ class CreateStoriesTable extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor('App\Models\User');
+            $table->foreignIdFor(\App\Models\User::class);
             $table->string('title')->nullable();
             $table->text('body')->nullable();
             $table->timestamps();
