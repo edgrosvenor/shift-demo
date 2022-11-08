@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStoriesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateStoriesTable extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor('App\Models\User');
+            $table->foreignIdFor(\App\Models\User::class);
             $table->string('title')->nullable();
             $table->text('body')->nullable();
             $table->timestamps();
@@ -31,4 +31,4 @@ class CreateStoriesTable extends Migration
     {
         Schema::dropIfExists('stories');
     }
-}
+};
